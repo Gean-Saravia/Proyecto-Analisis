@@ -15,3 +15,5 @@ __pycache__/
 
 # Checkpoints de Jupyter
 .ipynb_checkpoints/
+#Subimos el analisis previo
+!Analisis-Previo/*.ipynb
