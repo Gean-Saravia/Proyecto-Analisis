@@ -1,10 +1,20 @@
-# Ignorar datasets (todo lo de Data/)
+# Ignorar todo dentro de Data
 Data/*
-# pero mantener la estructura con .gitkeep
-!Data/.gitkeep
-!Data/bronce/.gitkeep
-!Data/silver/.gitkeep
-!Data/gold/.gitkeep
+
+# --- BRONCE ---
+!Data/Bronce/
+Data/Bronce/*
+!Data/Bronce/.gitkeep
+
+# --- SILVER ---
+!Data/Silver/
+Data/Silver/*
+!Data/Silver/.gitkeep
+
+# --- GOLD ---
+!Data/Gold/
+Data/Gold/*
+!Data/Gold/.gitkeep
 
 # Ignorar credenciales
 .env
