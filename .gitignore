@@ -1,0 +1,17 @@
+# Ignorar datasets (todo lo de Data/)
+Data/*
+# pero mantener la estructura con .gitkeep
+!Data/.gitkeep
+!Data/bronce/.gitkeep
+!Data/silver/.gitkeep
+!Data/gold/.gitkeep
+
+# Ignorar credenciales
+.env
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+
+# Checkpoints de Jupyter
+.ipynb_checkpoints/
