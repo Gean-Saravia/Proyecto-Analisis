@@ -1,10 +1,6 @@
 from db_utils import db_conectar
-
+#Creacion de esquemas
 def crear_esquemas():
-    """
-    Crea Bronce, Silver, Gold si no existen (idempotente).
-    Ejecutalo SOLO cuando quieras crear/verificar esquemas.
-    """
     esquemas = ["Bronce", "Silver", "Gold"]
     with db_conectar(autocommit=True) as conn:
         cur = conn.cursor()
@@ -15,4 +11,3 @@ def crear_esquemas():
                     EXEC('CREATE SCHEMA {esquema}')
                 END
             """)
-    print("✅ Esquemas verificados/creados (si faltaban).")

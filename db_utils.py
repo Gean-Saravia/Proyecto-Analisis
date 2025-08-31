@@ -4,7 +4,7 @@ import urllib.parse
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 
-#Conexión con pyodbc (control fino, para Silver/Gold) 
+#Conexión con pyodbc para control mas robusto en silvver y gold 
 def db_conectar(autocommit: bool = False) -> pyodbc.Connection:
     """Conecta a SQL Server usando pyodbc (útil para Silver/Gold)."""
     load_dotenv()
@@ -24,7 +24,7 @@ def db_conectar(autocommit: bool = False) -> pyodbc.Connection:
     return pyodbc.connect(connection_string, autocommit=autocommit)
 
 
-# Conexión con SQLAlchemy (rápida, solo para bronce)
+# Conexión con SQLAlchemy (SOLO PARA DATOS CRUDOS EN BRONCE)
 def crear_engine_mssql():
     """Crea un engine de SQLAlchemy (con fast_executemany) para cargas masivas."""
     load_dotenv()
@@ -34,7 +34,7 @@ def crear_engine_mssql():
     password = os.getenv("MSSQL_PASSWORD")
     driver   = os.getenv("MSSQL_DRIVER", "ODBC Driver 17 for SQL Server")
 
-    # Armamos el ODBC connection string y lo encodeamos para SQLAlchemy
+
     odbc_str = (
         f"DRIVER={driver};"
         f"SERVER={server};"
